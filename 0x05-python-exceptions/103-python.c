@@ -24,7 +24,7 @@ void print_python_list(PyObject *p)
 	if (strcmp(p->ob_type->tp_name, "list") != 0)
 	{
 		printf("  [ERROR] Invalid List Object\n");
-		eturn;
+		return;
 	}
 
 	printf("[*] Size of the Python List = %ld\n", size);
@@ -50,7 +50,7 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t size, i;
 	PyBytesObject *bytes = (PyBytesObject *)p;
 
-	lush(stdout);
+	fflush(stdout);
 
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
